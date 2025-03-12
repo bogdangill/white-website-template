@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>Contact</title>
+</head>
+
+<body class="contacts-page">
+    <header class="header">
+        <div class="container">
+            <div class="header__container">
+                <div class="logo">
+                    <a href="index.html"><img src="./assets/img/logo.svg" width="50" height="50" alt="Play Peak logo"></a>
+                </div>
+
+                <ul class="header__navigation">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a class="header__link-active" href="contact.html">Contact</a></li>
+                    <li><a href="member-conduct-code.html">Código de Conducta</a></li>
+                    <li><a href="explore-games.html">Juegos</a></li>
+                    <li><a href="about-us.html">Sobre Nosotros</a></li>
+                </ul>
+                <div class="mobile-menu__button"><img src="./assets/img/List.svg" width="40" height="34"></div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-menu menu">
+        <div class="mobile-menu__header">
+            <a href="index.html"><img src="./assets/img/logo.svg" width="50" height="50" alt="Play Peak logo"></a>
+            <div class="mobile-menu__close"><img src="./assets/img/close.svg" width="22" height="22"></div>
+        </div>
+        <ul class="mobile-menu__navigation">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a class="header__link-active" href="contact.html">Contact</a></li>
+            <li><a href="member-conduct-code.html">Código de Conducta</a></li>
+            <li><a href="explore-games.html">Juegos</a></li>
+            <li><a href="about-us.html">Sobre Nosotros</a></li>
+        </ul>
+        <img src="./assets/img/main-hero.png" alt="mascot" class="mobile-menu__hero">
+    </nav>
+
+    <div class="contacts-page__form-block form-block">
+        <section class="container contacts-page__content">
+            <h1 class="contacts-page__title h1">
+                Contact
+            </h1>
+            <p class="contacts-page__description">
+                Si requieres asistencia o deseas compartir alguna<br class="hidden-sm"> sugerencia estamos aquí para escuchar tu punto de vista.<br>¡Sigamos jugando!
+            </p>
+        </section>
+        <section class="container">
+            <h2>Escríbenos</h2>
+            <div class="form-block__content">
+                <form class="form-block__form" id="form-index">
+                    <input type="text" placeholder="Ingresa tu nombre" class="form-block__input" required>
+                    <input type="text" placeholder="Ingresa tu número de teléfonor" class="form-block__input" required>
+                    <input type="text" placeholder="DirecciÓn de Correo ElectrÓnico" class="form-block__input" required>
+                    <input type="text" placeholder="Agregar un comentario" class="form-block__input" required>
+                    <button type="submit" class="button form-block__button" onclick="window.location.href='submit.html';">
+                        Enviar un mensaje
+                    </button>
+                    <label class="form-block__checkbox-line">
+                        <input type="checkbox" class="form-block__checkbox" required>
+                        <p class="menu">Acepto <a href="" class="link">Política de Privacidad</a></p>
+                    </label>
+                </form>
+                <div class="form-block__hints">
+                    <div class="form-hint form-block__hint">
+                        <div class="form-hint__icon">
+                            <img src="./assets/img/mail.svg" alt="mail">
+                        </div>
+                        <p class="form-hint__text">
+                            Correo electrónico:<br> -productinfo<br class="visible-sm">@protonmail.com
+                        </p>
+                    </div>
+                    <div class="form-hint form-block__hint">
+                        <div class="form-hint__icon">
+                            <img src="./assets/img/phone.svg" alt="mail">
+                        </div>
+                        <p class="form-hint__text">
+                            Número de teléfono:<br>+34919152465
+                        </p>
+                    </div>
+                    <div class="form-hint form-block__hint">
+                        <div class="form-hint__icon">
+                            <img src="./assets/img/balloon.svg" alt="mail">
+                        </div>
+                        <p class="form-hint__text">
+                            Ubicación:<br>C. de Embajadores, 161, Arganzuela, 28045<br> Madrid España
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <img class="form-block__image form-block__image--contact-page" src="./assets/img/hero-feedback.png" alt="mascot">
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="logo footer__logo">
+                    <a href="index.html"><img width="50" height="50" src="./assets/img/logo.svg" alt="Play Peak logo"></a>
+                </div>
+                <div class="footer__links">
+                    <ul>
+                        <li class="footer__link"><a href="privacy.html">Politica de Privacidad</a></li>
+                        <li class="footer__link"><a href="terms.html">Términos y Condiciones</a></li>
+                        <li class="footer__link"><a href="member-conduct-code.html">Código de Conducta</a></li>
+                    </ul>
+                    <p class="footer__copyright">Copyright © 2025 Play Peak</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>

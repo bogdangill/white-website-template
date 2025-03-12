@@ -1,0 +1,12 @@
+# Folders
+/Barn Dash
+/Cube Dash
+/Jump Jump
+/Dashers
+/Duosometric Jump
+/node_modules
+
+# Logs
+/.vscode
+/.idea
+.DS_Store

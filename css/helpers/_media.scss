@@ -1,0 +1,90 @@
+@use './function' as *;
+
+//mobile-first breakpoint system
+$tablet-sm: 767.98;
+$tablet-md: 1023.98;
+$laptop: 1199.98;
+$desktop-sm: 1439.98;
+$desktop-md: 1599.98;
+$desktop-lg: 1919.98;
+
+//планшеты
+@mixin tablet-sm {
+	@media (width > rem($tablet-sm)){
+		@content;
+	}
+}
+@mixin tablet-sm-below {
+	@media (width <= rem($tablet-sm)){
+		@content;
+	}
+}
+@mixin tablet-md {
+	@media (width > rem($tablet-md)) {
+		@content;
+	}
+}
+@mixin tablet-md-below {
+	@media (width <= rem($tablet-md)) {
+		@content;
+	}
+}
+
+//ноуты
+@mixin laptop {
+	@media (width > rem($laptop)) {
+		@content;
+	}
+}
+@mixin laptop-below {
+	@media (width <= rem($laptop)) {
+		@content;
+	}
+}
+
+//компы
+@mixin desktop-sm {
+	@media (width > rem($desktop-sm)) {
+		@content;
+	}
+}
+@mixin desktop-sm-below {
+	@media (width <= rem($desktop-sm)) {
+		@content;
+	}
+}
+@mixin desktop-md {
+	@media (width > rem($desktop-md)) {
+		@content;
+	}
+}
+@mixin desktop-md-below {
+	@media (width <= rem($desktop-md)) {
+		@content;
+	}
+}
+@mixin desktop-lg {
+	@media (width > rem($desktop-lg)) {
+		@content;
+	}
+}
+@mixin desktop-lg-below {
+	@media (width <= rem($desktop-lg)) {
+		@content;
+	}
+}
+
+@mixin hover ($hasActiveEffectOnMobile: true){
+	@media (any-hover: hover){
+		&:hover{
+			@content;
+		}
+	}
+	@if($hasActiveEffectOnMobile){
+		@media (any-hover:none){
+			&:active{
+				@content;
+			}
+		}
+	}
+}

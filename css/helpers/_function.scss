@@ -1,0 +1,30 @@
+@use 'sass:math';
+
+@function rem($pixel){
+	@if math.is-unitless($pixel){
+		@return math.div($pixel, 16) + rem;
+	} @else{
+		@error 'Не используйсте единицы измерения при работе с функцией rem()! Передавайте аргументы в функцию только числа.'
+	}
+};
+// адаптивный размер шрифта
+@function fluid($max:100, $min:10){
+	// максимальная ширина макета
+	$maxViewportWidth: 1600;
+	// минимальная ширина макета
+	$minViewportWidth: 360;
+
+	$maxSize: math.div($max, 16);
+	$minSize: math.div($min, 16);
+	$maxWidth: math.div($maxViewportWidth, 16);
+	$minWidth: math.div($minViewportWidth, 16);
+
+	$slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+	$yAxisIntersection: -$minWidth * $slope + $minSize;
+
+	@return clamp(
+		#{$minSize * 1rem},
+		#{$yAxisIntersection * 1rem} + #{$slope * 100vh},
+		#{$maxSize * 1rem}
+	);
+}
