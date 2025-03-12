@@ -1,10 +1,6 @@
 # Folders
-/Barn Dash
-/Cube Dash
-/Jump Jump
-/Dashers
-/Duosometric Jump
 /node_modules
+/dist
 
 # Logs
 /.vscode

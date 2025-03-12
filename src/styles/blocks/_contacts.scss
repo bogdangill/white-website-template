@@ -1,0 +1,46 @@
+@use '../helpers' as *;
+
+.contacts {
+    display: grid;
+    padding-bottom: 80px;
+
+    @include tablet-md {
+        grid-template-columns: 1.3fr 1fr;
+        padding-top: 70px;
+        padding-bottom: 150px;
+    }
+
+    &__image {
+        width: 100%;
+
+        @include tablet-md {
+            order: 1;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: $card-shadow;
+        }
+    }
+    &__inner {
+        display: grid;
+        gap: 10px;
+        background-color: $color-background-light;
+        box-shadow: $card-shadow;
+        padding: 30px 20px;
+    }
+    &__item {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        align-items: center;
+        gap: 8px;
+        font-size: 18px;
+        line-height: 23px;
+        color: $color-text-primary;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    &__icon {
+        width: 25px;
+        height: 25px;
+        margin: 18px;
+    }
+}

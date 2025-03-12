@@ -1,0 +1,42 @@
+@use '../helpers' as *;
+
+.game-reviews {
+    &__title {
+        margin-bottom: 30px;
+    }
+    &__grid {
+        display: grid;
+        gap: 20px;
+
+        @include tablet-md {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+    }
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        background-color: $color-background-light;
+        box-shadow: $card-shadow;
+        padding: 20px 10px;
+
+        @include tablet-md {
+            flex-direction: row;
+        }
+    }
+    &__avatar {
+        width: 249px;
+        height: 249px;
+    }
+    &__reviewer {
+        font-size: 30px;
+        line-height: 38px;
+        font-weight: 700;
+        color: $color-text-primary;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+    }
+}

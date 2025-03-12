@@ -1,0 +1,132 @@
+@use '../helpers' as *;
+
+.explore-games {
+    background-image: url("../../images/background_mob_02.png");
+    background-size: cover;
+
+    padding-top: 54px;
+    padding-bottom: 54px;
+
+    &--explore-games {
+        margin-bottom: 80px;
+    }
+
+    @include tablet-sm {
+        background-image: url("../../images/background_02.png");
+        padding-top: 66px;
+        padding-bottom: 66px;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-rows: repeat(5, auto);
+        gap: 20px;
+
+        @include tablet-sm {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, auto);
+        }
+        @include laptop {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto;
+        }
+    }
+}
+
+.game-card {
+    --image-height-mobile: 224px;
+
+    height: calc(var(--image-height-mobile) + 78px);
+    position: relative;
+    overflow: hidden;
+    
+    &:first-of-type {
+        --image-height-mobile: 320px;
+        height: auto;
+
+        @include tablet-sm {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+        @include tablet-md {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .game-card__body,
+        .game-card__image {
+            position: static;
+        }
+
+        .game-card__body {
+            padding: 20px;
+            
+            @include laptop-below {
+                height: auto;
+            }
+        }
+    }
+
+    @include hover {
+        .game-card__body {
+            top: 0;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: var(--image-height-mobile);
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+        background-color: $color-background;
+    }
+
+    &__title {
+        white-space: nowrap;
+        margin-bottom: 20px;
+
+        @include desktop-sm-below {
+            font-size: 26px;
+        }
+    }
+
+    &__description {
+        font-size: 18px;
+        line-height: 23px;
+        margin-bottom: 40px;
+
+        @include laptop {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        margin-top: auto;
+    }
+
+    &__body {
+        position: absolute;
+        top: var(--image-height-mobile);
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: $color-background-light;
+        transition: $transition;
+        padding: 20px;
+
+        @include laptop {
+            padding: 20px 10px;
+        }
+    }
+}

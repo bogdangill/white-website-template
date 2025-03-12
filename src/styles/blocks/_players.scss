@@ -1,0 +1,92 @@
+@use '../helpers' as *;
+
+.players {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include tablet-md {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    @include tablet-sm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__image {
+        display: none;
+        position: absolute;
+        width: 305px;
+        height: 372px;
+        top: 280px;
+
+        @include laptop {
+            display: block;
+        }
+
+        &--left {
+            left: 0;
+        }
+        &--right {
+            right: 0;
+        }
+    }
+    &__title {
+        margin-bottom: 30px;
+    }
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include tablet-sm {
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 580px;
+            justify-content: center;
+        }
+    }
+}
+
+.player-card {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    width: 100%;
+    background-image: url("../../images/background_avatar_mob.png");
+    background-size: cover;
+    padding: 20px 0;
+
+    @include tablet-sm {
+        max-width: 180px;
+    }
+
+    &__text {
+        margin: 0;
+    }
+
+    &__avatar {
+        width: 79px;
+        height: 81px;
+        margin-bottom: 12px;
+    }
+    &__name,
+    &__rating {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $color-text-secondary;
+    }
+    &__name {
+        color: $color-text-secondary;
+        margin-bottom: 4px;
+    }
+    &__rating {
+        color: $color-text-primary;
+        margin: 0;
+    }
+}

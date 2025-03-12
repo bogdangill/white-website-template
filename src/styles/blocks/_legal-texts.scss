@@ -1,0 +1,33 @@
+@use '../helpers' as *;
+
+.legal-texts {
+    background-color: $color-background-light;
+    box-shadow: $card-shadow;
+    padding: 20px;
+    margin-bottom: 80px;
+
+    @include tablet-sm {
+        margin-bottom: 150px;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+    &__description {
+        font-size: 18px;
+        line-height: 23px;
+        font-weight: 600;
+        color: $color-text-primary;
+        white-space: pre-line;
+        margin-bottom: 40px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
