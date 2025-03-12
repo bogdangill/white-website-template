@@ -1,0 +1,44 @@
+{% set links = [
+    {
+        href: "/explore-games.html",
+        text: common.footer.links.EXPLORE_GAMES
+    },
+    {
+        href: "/about-us.html",
+        text: common.footer.links.ABOUT_US
+    },
+    {
+        href: "/member-conduct-code.html",
+        text: common.footer.links.CODE_OF_CONDUCT
+    },
+    {
+        href: "/privacy.html",
+        text: common.footer.links.PRIVACY
+    },
+    {
+        href: "/terms.html",
+        text: common.footer.links.TERMS
+    },
+    {
+        href: "/contact.html",
+        text: common.footer.links.CONTACTS
+    }
+] %}
+
+<footer class="footer">
+    <div class="container footer__container">
+        <a href="./index.html" class="footer__logo">
+            <img src="./images/logo.png" alt="logo" width="51" height="59">
+        </a>
+        <nav class="footer__nav">
+            {% for item in links %}
+                <a href="{{item.href}}" class="footer__link">
+                    {{item.text}}
+                </a>
+            {% endfor %}
+        </nav>
+        <p class="footer__copyright">
+            {{common.footer.COPYRIGHT| replace("()", common.COMPANY_NAME)}}
+        </p>
+    </div>
+</footer>

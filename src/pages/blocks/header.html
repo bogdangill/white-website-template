@@ -1,0 +1,57 @@
+{% set links = [
+    {
+        href: "/index.html",
+        text: common.header.links.HOME
+    },
+    {
+        href: "/explore-games.html",
+        text: common.header.links.EXPLORE_GAMES
+    },
+    {
+        href: "/about-us.html",
+        text: common.header.links.ABOUT_US
+    },
+    {
+        href: "/member-conduct-code.html",
+        text: common.header.links.CODE_OF_CONDUCT
+    },
+    {
+        href: "/contact.html",
+        text: common.header.links.CONTACTS
+    }
+] %}
+
+<div class="header-wrapper">
+    <header class="header container" data-js-header>
+        <div class="header__inner">
+            <a href="./index.html" class="header__logo">
+                <img src="./images/logo.png" alt="logo" width="51" height="59">
+            </a>
+            <button class="header__button" data-js-header-burger-button>
+            </button>
+        </div>
+        <div class="header__menu" data-js-header-overlay>
+            <nav class="header__nav">
+                {% for link in links %}
+                    <a href="{{link.href}}" class="header__link" data-js-nav-link>
+                        {{link.text}}
+                    </a>
+                {% endfor %}
+            </nav>
+            <ul class="header__contacts">
+                <li class="header__contact">
+                    <img src="./images/phone.svg" alt="" class="header__contact-icon">
+                    <a href="tel:{{common.contacts.PHONE}}" class="header__link">
+                        {{common.contacts.PHONE}}
+                    </a>
+                </li>
+                <li class="header__contact">
+                    <img src="./images/mail.svg" alt="" class="header__contact-icon">
+                    <a href="mailto:{{common.contacts.EMAIL}}" class="header__link">
+                        {{common.contacts.EMAIL}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+</div>
