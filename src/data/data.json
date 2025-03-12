@@ -1,0 +1,38 @@
+{
+    "common": {
+        "LOCALE": "it",
+        "COMPANY_NAME": "Parco Giochi",
+        "contacts": {
+            "EMAIL": "parcogio@mail.com",
+            "PHONE": "+39840800381"
+        },
+        "header": {
+            "links": {
+                "HOME": "Home",
+                "EXPLORE_GAMES": "Esplora i giochi",
+                "ABOUT_US": "Chi siamo",
+                "CODE_OF_CONDUCT": "Codice di condotta",
+                "CONTACTS": "Contatti"
+            }
+        },
+        "footer": {
+            "links": {
+                "EXPLORE_GAMES": "Esplora i giochi",
+                "ABOUT_US": "Chi siamo",
+                "CODE_OF_CONDUCT": "Codice di comportamento",
+                "PRIVACY": "Politica sulla riservatezza",
+                "TERMS": "Termini e condizioni",
+                "CONTACTS": "Contatti"
+            },
+            "COPYRIGHT": "Copyright © 2024 ()"
+        }
+    },
+    "index": {
+        "META_TITLE": "Home",
+        "promo": {
+            "PRETITLE": "Il tuo viaggio nel mondo del gioco inizia qui a",
+            "TITLE": "Parco Giochi!",
+            "DESCRIPTION": "Unisciti a noi e scopri nuovi, entusiasmanti mondi"
+        }
+    }
+}
