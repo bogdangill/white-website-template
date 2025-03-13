@@ -93,7 +93,7 @@ async function images() {
 }
 
 function observer() {
-    watch("./src/styles/**/*.scss", styles).on('change', browserSync.reload);
+    watch("./src/styles/**/*.scss", series(styles, purgecss)).on('change', browserSync.reload);
     watch("./src/pages/**/*.html", html).on('change', browserSync.reload);
     watch("./src/scripts/**/*.js", scripts);
     watch("./src/images/**/*.{png, jpeg, jpg, webp, svg}", images);
