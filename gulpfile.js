@@ -8,20 +8,20 @@ const purgeCSS = require('gulp-purgecss'); //чистка цсс от неисп
 const prettify = require('gulp-prettify'); //форматирование итогового хтмл для читаемости
 
 function styles() {
-    return src(`./src/styles/styles.scss`, {sourcemaps: true})
+    return src(`./src/styles/styles.scss`)
         .pipe(sass({
-            outputStyle: "expanded"
+            style: 'compressed'
         }))
-        .pipe(dest(`./dist/styles`, {sourcemaps: true}))
+        .pipe(dest(`./dist`))
         .pipe(browserSync.stream());
 }
 
 function purgecss() {
-    return src(`./dist/styles/styles.css`)
+    return src(`./dist/styles.css`)
         .pipe(purgeCSS({
-            content: ['./dist/*.html']
+            content: ['./dist/*.html'],
         }))
-        .pipe(dest(`./dist/styles`))
+        .pipe(dest(`./dist`))
 }
 
 function html() {
@@ -45,8 +45,13 @@ function html() {
         .pipe(browserSync.stream());
 }
 
+function copySCSS() {
+    return src(`./src/styles/**/*.scss`)
+        .pipe(dest(`./dist/scss`))
+}
+
 function scripts() {
-    return src(`./src/scripts/script.js`, { sourcemaps: true })
+    return src(`./src/scripts/script.js`)
         .pipe(dest(`./dist/scripts`))
         .pipe(browserSync.stream());
 }
@@ -72,7 +77,7 @@ async function images() {
         .pipe(browserSync.stream());
 }
 
-function watcher() {
+function observer() {
     watch("./src/styles/**/*.scss", styles).on('change', browserSync.reload);
     watch("./src/pages/**/*.html", html).on('change', browserSync.reload);
     watch("./src/scripts/**/*.js", scripts);
@@ -86,6 +91,9 @@ exports.html = html
 exports.images = images
 exports.fonts = fonts
 exports.purgecss = purgecss
+exports.copyscss = copySCSS
+
+const compileDist = parallel(styles, scripts, images, fonts, html, copySCSS);
 
 //выполнение сценария по умолчанию
-exports.dev = parallel(styles, scripts, images, fonts, html, browsersync, watcher);
+exports.dev = series(compileDist, purgecss, parallel(browsersync, observer));
