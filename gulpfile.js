@@ -6,6 +6,15 @@ const fs = require('node:fs');
 const data = require('gulp-data');
 const purgeCSS = require('gulp-purgecss'); //чистка цсс от неиспользуемых в разметке классов
 const prettify = require('gulp-prettify'); //форматирование итогового хтмл для читаемости
+const destroy = require('del');
+const archivate = require('gulp-zip');
+
+const projectName = require('./package.json').name;
+const projectVersion = require('./package.json').version;
+
+function clean() {
+    return destroy(['./dist', './build'])
+}
 
 function styles() {
     return src(`./src/styles/styles.scss`)
@@ -14,6 +23,12 @@ function styles() {
         }))
         .pipe(dest(`./dist`))
         .pipe(browserSync.stream());
+}
+
+function build() {
+    return src('./dist/**')
+        .pipe(archivate(`${projectName+'-'+projectVersion}.zip`))
+        .pipe(dest(`./build`))
 }
 
 function purgecss() {
@@ -92,8 +107,11 @@ exports.images = images
 exports.fonts = fonts
 exports.purgecss = purgecss
 exports.copyscss = copySCSS
+exports.clean = clean
 
 const compileDist = parallel(styles, scripts, images, fonts, html, copySCSS);
 
 //выполнение сценария по умолчанию
-exports.dev = series(compileDist, purgecss, parallel(browsersync, observer));
+exports.dev = series(clean, compileDist, purgecss, parallel(browsersync, observer));
+//финальный билд в архиве на чек
+exports.build = build
