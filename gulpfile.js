@@ -66,7 +66,7 @@ function copySCSS() {
 }
 
 function scripts() {
-    return src(`./src/scripts/script.js`)
+    return src(`./src/scripts/*.js`)
         .pipe(dest(`./dist/scripts`))
         .pipe(browserSync.stream());
 }
