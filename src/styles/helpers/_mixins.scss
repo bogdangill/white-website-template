@@ -1,0 +1,19 @@
+@use 'media' as *;
+
+@mixin backgroundImg($image-name, $size: cover) {
+    background-image: url("images/"+$image-name+".png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: $size;
+}
+
+@mixin container($max-width, $padding-x: 24px) {
+    $half-width: calc($max-width / 2);
+    width: 100%;
+    padding-left: $padding-x;
+    padding-right: $padding-x;
+
+    @include desktop-md {
+        padding: 0 calc(50vw - $half-width);
+    }
+}

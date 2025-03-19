@@ -3,17 +3,4 @@
 @use 'fonts';
 @use 'globals';
 
-@use './blocks/header';
-@use './blocks/promo';
-@use './blocks/steps';
-@use './blocks/explore-games';
-@use './blocks/players';
-@use './blocks/faq';
-@use './blocks/feedback';
-@use './blocks/footer';
-@use './blocks/legal-texts';
-@use './blocks/contacts';
-@use './blocks/cookie-banner';
-@use './blocks/game-description';
-@use './blocks/rating-games';
-@use './blocks/game-reviews';
+@use 'blocks';

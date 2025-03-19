@@ -1,0 +1,90 @@
+@use '../helpers' as *;
+
+.banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 333;
+
+    &--age {
+        top: 0;
+        left: 0;
+        place-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+
+        .banner__inner {
+            @include tablet-sm-below {
+                width: 100%;
+            }
+            @include tablet-sm {
+                padding: 50px 40px 40px;
+            }
+        }
+        .banner__title {
+            margin-bottom: 25px;
+
+            @include tablet-sm {
+                font-size: 30px;
+                line-height: 110%;
+            }
+        }
+    }
+    &--cookie {
+        @include tablet-sm {
+            bottom: 67px;
+            right: 67px;
+            max-width: 457px;
+        }
+    }
+
+    &.is-active {
+        display: grid;
+    }
+    &__inner {
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $color-text-primary;
+        background-color: $color-background;
+
+        padding: 50px 24px 20px 24px;
+    }
+    &__title {
+        margin-bottom: 10px;
+    }
+    &__text {
+        font-size: 17px;
+        line-height: 20px;
+        font-weight: 250;
+        margin-bottom: 24px;
+
+        @include tablet-sm {
+            font-size: 20px;
+            line-height: 23px;
+        }
+    }
+    &__buttons {
+        display: grid;
+        gap: 30px;
+
+        @include tablet-sm {
+            grid-template-columns: auto auto;
+            gap: 40px;
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 26px;
+        width: 30px;
+        height: 30px;
+        @include backgroundImg("close");
+        border: 0;
+    }
+}

@@ -1,21 +1,18 @@
-$color-background: #404652; //фон
-$color-background-light: #646D80; //подложка
-$color-background-about: #B16E40; //подложка о нас
-$color-primary: #FF6A00; //кнопка
-$color-background-footer: #2C323D; //подвал
+$color-background: #001C37; //фон
+$color-background-light: #01376A; //подложка
+$color-background-2: linear-gradient(180.00deg, #ffc549,#9d3700 100%); //подложка 2
+$color-background-3: linear-gradient(180.00deg, #93b95e,#002942 100%); //подложка 3
+$color-primary: linear-gradient(180.00deg, #33cb47,#005132 100%);; //кнопка
 $color-text-primary: #FFFFFF; // текст 1
-$color-text-secondary: #00FFE1; // текст 2
-$color-text-form: #BEBEBE; // текст в форме
-$color-text-footer: #909BAF; // текст подвал
-
-$header-gradient: linear-gradient(180.00deg, rgb(0, 46, 66),rgba(0, 46, 66, 0) 100%);
-$header-tablet-height: 182px;
-$card-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.25);
-
-$color-secondary: #00BBFF;
-$color-danger: #FF0000;
-$color-background-input: #FFFFFF;
+$color-text-secondary: #392500; // текст 2
+$color-text-tertiary: #1F2916; // текст 3
+$color-text-4: #30DA4D; // текст 4
 
 $transition: .2s ease-out;
 
-$font-primary: 'Source Serif Pro', serif;
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Philosopher', serif; 
+
+$header-mobile-height: 210px;
+$header-desktop-height: 80px;
+$mb-section: 120px;
