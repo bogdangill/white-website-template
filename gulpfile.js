@@ -26,7 +26,7 @@ function styles() {
 }
 
 function build() {
-    return src('./dist/**')
+    return src('./dist/**', {encoding: false})
         .pipe(archivate(`${projectName+'-'+projectVersion}.zip`))
         .pipe(dest(`./build`))
 }
