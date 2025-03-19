@@ -2,8 +2,6 @@ const { src, dest, parallel, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const nunjucksRender = require('gulp-nunjucks-render');
-const fs = require('node:fs');
-const data = require('gulp-data');
 const purgeCSS = require('gulp-purgecss'); //чистка цсс от неиспользуемых в разметке классов
 const prettify = require('gulp-prettify'); //форматирование итогового хтмл для читаемости
 const destroy = require('del');
@@ -41,10 +39,6 @@ function purgecss() {
 
 function html() {
     return src(`./src/pages/*.html`)
-        // добавление текстов из json словаря
-        .pipe(data(function() {
-            return JSON.parse(fs.readFileSync('./src/data/data.json'))
-        }))
         .pipe(nunjucksRender({
             path: "./src/pages/blocks/" //можно и просто строку
         }))
