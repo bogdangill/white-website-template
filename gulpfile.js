@@ -20,7 +20,7 @@ function styles() {
     return src(`./src/styles/styles.scss`)
         .pipe(sass({
             style: 'compressed'
-        }))
+        }).on('error', sass.logError))
         .pipe(dest(`./dist`))
         .pipe(browserSync.stream());
 }
